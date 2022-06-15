@@ -1,0 +1,4 @@
+admin_log_view:
+    path: /admin/log/list.html
+    methods: GET|POST
+    controller: Sowapps\SoLogBundle\Controller\Admin\AdminLogController::view
