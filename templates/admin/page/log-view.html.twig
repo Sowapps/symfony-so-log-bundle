@@ -26,14 +26,14 @@
 		{% block footer %}
 			{% trans_default_domain 'admin' %}
 			{% if otherCount %}
-				<button class="btn btn-outline-info" data-controller="sowapps--so-core--confirm"
+				<button class="btn btn-outline-info" type="button" data-controller="sowapps--so-core--confirm"
 						data-sowapps--so-core--confirm-title-value="{{ 'page.admin_log_view.removeNonErrorReports.confirmTitle' | trans }}"
 						data-sowapps--so-core--confirm-message-value="{{ 'page.admin_log_view.removeNonErrorReports.confirmMessage' | trans }}"
 						data-sowapps--so-core--confirm-submit-name-value="submitRemoveNonError">
 					{{ 'page.admin_log_view.removeNonErrorReports.label' | trans }}
 				</button>
 			{% endif %}
-			<button class="btn btn-outline-danger ml-1" data-controller="sowapps--so-core--confirm"
+			<button class="btn btn-outline-danger ms-1" type="button" data-controller="sowapps--so-core--confirm"
 					data-sowapps--so-core--confirm-title-value="{{ 'page.admin_log_view.removeAll.confirmTitle' | trans }}"
 					data-sowapps--so-core--confirm-message-value="{{ 'page.admin_log_view.removeAll.confirmMessage' | trans }}"
 					data-sowapps--so-core--confirm-submit-name-value="submitRemoveAll">
@@ -109,7 +109,7 @@
 								</div>
 							</div>
 							<div class="card-footer text-end">
-								<button class="btn btn-primary" data-controller="sowapps--so-core--confirm"
+								<button class="btn btn-primary" type="button" data-controller="sowapps--so-core--confirm"
 										data-sowapps--so-core--confirm-title-value="{{ 'page.admin_log_view.remove.confirmTitle' | trans }}"
 										data-sowapps--so-core--confirm-message-value="{{ 'page.admin_log_view.remove.confirmMessage' | trans }}"
 										data-sowapps--so-core--confirm-submit-name-value="submitRemoveByKey"

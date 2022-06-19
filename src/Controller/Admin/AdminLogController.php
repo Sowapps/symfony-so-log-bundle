@@ -20,6 +20,8 @@ class AdminLogController extends AbstractAdminController {
 	protected array $levels;
 	
 	public function view(Request $request, LoggerInterface $logger): Response {
+		$this->addRequestToBreadcrumb($request);
+		
 		$handler = $this->getBestFileHandler($logger);
 		$this->levels = array_combine(Level::NAMES, Level::VALUES);
 		$level = Level::Error->value;
