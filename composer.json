@@ -1,5 +1,5 @@
 {
-	"name": "sowapps/so-log-bundle",
+	"name": "sowapps/so-log",
 	"type": "symfony-bundle",
 	"license": "MIT",
 	"minimum-stability": "stable",
@@ -17,12 +17,12 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Sowapps\\SoLogBundle\\": "src/"
+			"Sowapps\\SoLog\\": "src/"
 		}
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"Sowapps\\SoLogBundle\\Tests\\": "tests/"
+			"Sowapps\\SoLog\\Tests\\": "tests/"
 		}
 	},
 	"extra": {

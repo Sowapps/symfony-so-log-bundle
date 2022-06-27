@@ -14,7 +14,7 @@ services:
 
     #   Controllers
 
-    Sowapps\SoLogBundle\Controller\Admin\AdminLogController:
+    Sowapps\SoLog\Controller\Admin\AdminLogController:
         tags: [ 'controller.service_arguments' ]
         arguments:
             - '@so_core.controller'

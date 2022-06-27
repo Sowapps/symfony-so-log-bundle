@@ -3,15 +3,15 @@
  * @author Florent HAZARD <f.hazard@sowapps.com>
  */
 
-namespace Sowapps\SoLogBundle\Controller\Admin;
+namespace Sowapps\SoLog\Controller\Admin;
 
 use DateTimeImmutable;
 use Exception;
 use Monolog\Handler\StreamHandler;
 use Monolog\Level;
 use Psr\Log\LoggerInterface;
-use Sowapps\SoCoreBundle\Core\Controller\AbstractAdminController;
-use Sowapps\SoLogBundle\Parser\LogEntry;
+use Sowapps\SoCore\Core\Controller\AbstractAdminController;
+use Sowapps\SoLog\Parser\LogEntry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

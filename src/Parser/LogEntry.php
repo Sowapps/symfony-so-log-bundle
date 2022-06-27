@@ -3,7 +3,7 @@
  * @author Florent HAZARD <f.hazard@sowapps.com>
  */
 
-namespace Sowapps\SoLogBundle\Parser;
+namespace Sowapps\SoLog\Parser;
 
 use DateTime;
 use DateTimeInterface;
