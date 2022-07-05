@@ -28,17 +28,17 @@ class AdminLogController extends AbstractAdminController {
 		
 		if( $request->get('submitRemoveByKey') ) {
 			$this->removeEntryByKey($handler->getUrl(), $request->get('submitRemoveByKey'));
-			$this->addFlash('log_success', $this->translator->trans('page.admin_log_view.remove.success', [], 'admin'));
+			$this->addFlash('log_success', $this->translator->trans('page.so_core_admin_log_view.remove.success', [], 'admin'));
 			$this->redirectToRequest($request);
 			
 		} elseif( $request->get('submitRemoveNonError') ) {
 			$this->removeEntriesBelowLevel($handler->getUrl(), $level);
-			$this->addFlash('log_success', $this->translator->trans('page.admin_log_view.removeNonErrorReports.success', [], 'admin'));
+			$this->addFlash('log_success', $this->translator->trans('page.so_core_admin_log_view.removeNonErrorReports.success', [], 'admin'));
 			$this->redirectToRequest($request);
 			
 		} elseif( $request->get('submitRemoveAll') ) {
 			$this->eraseLog($handler->getUrl());
-			$this->addFlash('log_success', $this->translator->trans('page.admin_log_view.removeAll.success', [], 'admin'));
+			$this->addFlash('log_success', $this->translator->trans('page.so_core_admin_log_view.removeAll.success', [], 'admin'));
 			$this->redirectToRequest($request);
 		}
 		
