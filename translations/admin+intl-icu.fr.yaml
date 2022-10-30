@@ -1,5 +1,5 @@
 page:
-    admin_log_view:
+    so_core_admin_log_view:
         label: "Journal de bord"
         legend: "Est-ce que tout se passe bien sur l'application ?"
         summary: |

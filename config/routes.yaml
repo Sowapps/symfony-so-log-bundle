@@ -1,4 +1,4 @@
-admin_log_view:
+so_core_admin_log_view:
     path: /admin/log/list.html
     methods: GET|POST
     controller: Sowapps\SoLog\Controller\Admin\AdminLogController::view
