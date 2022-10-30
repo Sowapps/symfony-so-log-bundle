@@ -6,20 +6,20 @@
 
 {% set statusClass = {rare: 'text-primary', occasionally: 'text-warning', urgent: 'text-danger', solved: 'text-success'} %}
 
-{% block title %}{{ parent() ~ ' ~ ' ~ ('page.admin_log_view.label' | trans([], 'admin')) }}{% endblock %}
+{% block title %}{{ parent() ~ ' ~ ' ~ ('page.so_core_admin_log_view.label' | trans([], 'admin')) }}{% endblock %}
 
 {% block layoutContents %}
 	
 	{{ form_success(app.flashes('log_success')) }}
 	
-	{% embed "@SoCore/component/panel.admin.html.twig" with {title: 'page.admin_log_view.label' | trans() } %}
+	{% embed "@SoCore/component/panel.admin.html.twig" with {title: 'page.so_core_admin_log_view.label' | trans() } %}
 		{% block body_contents %}
 			<p>
-				{{ 'page.admin_log_view.summary' | trans(info, 'admin') | nl2br }}
+				{{ 'page.so_core_admin_log_view.summary' | trans(info, 'admin') | nl2br }}
 			</p>
 			{% if otherCount %}
 				<p>
-					{{ 'page.admin_log_view.otherReports' | trans({number: otherCount}, 'admin') }}
+					{{ 'page.so_core_admin_log_view.otherReports' | trans({number: otherCount}, 'admin') }}
 				</p>
 			{% endif %}
 		{% endblock %}
@@ -27,17 +27,17 @@
 			{% trans_default_domain 'admin' %}
 			{% if otherCount %}
 				<button class="btn btn-outline-info" type="button" data-controller="sowapps--so-core--confirm"
-						data-sowapps--so-core--confirm-title-value="{{ 'page.admin_log_view.removeNonErrorReports.confirmTitle' | trans }}"
-						data-sowapps--so-core--confirm-message-value="{{ 'page.admin_log_view.removeNonErrorReports.confirmMessage' | trans }}"
+						data-sowapps--so-core--confirm-title-value="{{ 'page.so_core_admin_log_view.removeNonErrorReports.confirmTitle' | trans }}"
+						data-sowapps--so-core--confirm-message-value="{{ 'page.so_core_admin_log_view.removeNonErrorReports.confirmMessage' | trans }}"
 						data-sowapps--so-core--confirm-submit-name-value="submitRemoveNonError">
-					{{ 'page.admin_log_view.removeNonErrorReports.label' | trans }}
+					{{ 'page.so_core_admin_log_view.removeNonErrorReports.label' | trans }}
 				</button>
 			{% endif %}
 			<button class="btn btn-outline-danger ms-1" type="button" data-controller="sowapps--so-core--confirm"
-					data-sowapps--so-core--confirm-title-value="{{ 'page.admin_log_view.removeAll.confirmTitle' | trans }}"
-					data-sowapps--so-core--confirm-message-value="{{ 'page.admin_log_view.removeAll.confirmMessage' | trans }}"
+					data-sowapps--so-core--confirm-title-value="{{ 'page.so_core_admin_log_view.removeAll.confirmTitle' | trans }}"
+					data-sowapps--so-core--confirm-message-value="{{ 'page.so_core_admin_log_view.removeAll.confirmMessage' | trans }}"
 					data-sowapps--so-core--confirm-submit-name-value="submitRemoveAll">
-				{{ 'page.admin_log_view.removeAll.label' | trans }}
+				{{ 'page.so_core_admin_log_view.removeAll.label' | trans }}
 			</button>
 		{% endblock %}
 	{% endembed %}
@@ -45,7 +45,7 @@
 	<div class="row">
 		
 		<div class="col-12">
-			<h2 class="mb-4">{{ 'page.admin_log_view.errors.title' | trans }}</h2>
+			<h2 class="mb-4">{{ 'page.so_core_admin_log_view.errors.title' | trans }}</h2>
 			<div id="ListLogEntry">
 				{# @var \Sowapps\SowappsLogViewerBundle\Parser\LogEntry logEntry #}
 				{% for logEntry in logEntries %}
@@ -67,11 +67,11 @@
 								<div class="form-horizontal">
 									<div class="row">
 										<div class="col-lg-8">
-											<h5>{{ 'page.admin_log_view.entry.details' | trans() }}</h5>
+											<h5>{{ 'page.so_core_admin_log_view.entry.details' | trans() }}</h5>
 											
 											<div class="form-group row">
 												<label for="InputEntryDomain{{ panelId }}"
-													   class="col-sm-2 col-form-label font-weight-bold">{{ 'page.admin_log_view.entry.domain' | trans }}</label>
+													   class="col-sm-2 col-form-label font-weight-bold">{{ 'page.so_core_admin_log_view.entry.domain' | trans }}</label>
 												<div class="col-sm-10">
 													<input type="text" readonly class="form-control-plaintext" id="InputEntryDomain{{ panelId }}"
 														   value="{{ logEntry.domain }}">
@@ -80,7 +80,7 @@
 											
 											<div class="form-group row">
 												<label for="InputEntryMessage{{ panelId }}"
-													   class="col-sm-2 col-form-label font-weight-bold">{{ 'page.admin_log_view.entry.message' | trans }}</label>
+													   class="col-sm-2 col-form-label font-weight-bold">{{ 'page.so_core_admin_log_view.entry.message' | trans }}</label>
 												<div class="col-sm-10">
 													<textarea readonly class="form-control-plaintext item-message" id="InputEntryMessage{{ panelId }}"
 															  rows="3">{{ logEntry.message }}</textarea>
@@ -89,16 +89,16 @@
 											
 											<div class="form-group row">
 												<label for="InputEntryStatus{{ panelId }}"
-													   class="col-sm-2 col-form-label font-weight-bold">{{ 'page.admin_log_view.entry.status' | trans }}</label>
+													   class="col-sm-2 col-form-label font-weight-bold">{{ 'page.so_core_admin_log_view.entry.status' | trans }}</label>
 												<div class="col-sm-10">
 													<input type="text" readonly class="form-control-plaintext {{ statusClass[logEntry.status] }}"
 														   id="InputEntryStatus{{ panelId }}"
-														   value="{{ (('page.admin_log_view.status.' ~ logEntry.status)|trans) ~ ' (' ~ logEntry.averageDays ~ ', ' ~ logEntry.lastToNowDays ~ ')' }}">
+														   value="{{ (('page.so_core_admin_log_view.status.' ~ logEntry.status)|trans) ~ ' (' ~ logEntry.averageDays ~ ', ' ~ logEntry.lastToNowDays ~ ')' }}">
 												</div>
 											</div>
 										</div>
 										<div class="col-lg-4">
-											<h5>{{ 'page.admin_log_view.entry.occurences' | trans() }}</h5>
+											<h5>{{ 'page.so_core_admin_log_view.entry.occurences' | trans() }}</h5>
 											<ul>
 												{% for occurence in logEntry.occurrences %}
 													<li>{{ occurence[0].format('c') }}{% if occurence[1] %} ({{ occurence[1] }}){% endif %}</li>
@@ -110,11 +110,11 @@
 							</div>
 							<div class="card-footer text-end">
 								<button class="btn btn-primary" type="button" data-controller="sowapps--so-core--confirm"
-										data-sowapps--so-core--confirm-title-value="{{ 'page.admin_log_view.remove.confirmTitle' | trans }}"
-										data-sowapps--so-core--confirm-message-value="{{ 'page.admin_log_view.remove.confirmMessage' | trans }}"
+										data-sowapps--so-core--confirm-title-value="{{ 'page.so_core_admin_log_view.remove.confirmTitle' | trans }}"
+										data-sowapps--so-core--confirm-message-value="{{ 'page.so_core_admin_log_view.remove.confirmMessage' | trans }}"
 										data-sowapps--so-core--confirm-submit-name-value="submitRemoveByKey"
 										data-sowapps--so-core--confirm-submit-value-value="{{ logEntry.uniqueKey }}">
-									{{ 'page.admin_log_view.remove.label' | trans }}
+									{{ 'page.so_core_admin_log_view.remove.label' | trans }}
 								</button>
 							</div>
 						</div>
@@ -122,7 +122,7 @@
 				
 				{% else %}
 					<div class="alert alert-info">
-						{{- 'page.admin_log_view.empty' | trans -}}
+						{{- 'page.so_core_admin_log_view.empty' | trans -}}
 					</div>
 				{% endfor %}
 			</div>
