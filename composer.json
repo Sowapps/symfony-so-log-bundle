@@ -7,7 +7,7 @@
 		"ext-ctype": "*",
 		"ext-iconv": "*",
 		"ext-intl": "*",
-		"symfony/twig-bundle": "^6.4",
+		"symfony/twig-bundle": "^7.3",
 		"twig/extra-bundle": "^2.12|^3.0",
 		"twig/twig": "^3.0"
 	},
