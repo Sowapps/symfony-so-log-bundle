@@ -9,11 +9,9 @@
 		"ext-ctype": "*",
 		"ext-iconv": "*",
 		"ext-intl": "*",
-		"doctrine/doctrine-fixtures-bundle": "*",
-		"symfony/flex": "2.*",
-		"symfony/twig-bundle": "6.1.*",
-		"twig/string-extra": "^3.4",
-		"twig/twig": "^2.12|^3.0"
+		"symfony/twig-bundle": "^6.4",
+		"twig/extra-bundle": "^2.12|^3.0",
+		"twig/twig": "^3.0"
 	},
 	"autoload": {
 		"psr-4": {
@@ -23,12 +21,6 @@
 	"autoload-dev": {
 		"psr-4": {
 			"Sowapps\\SoLog\\Tests\\": "tests/"
-		}
-	},
-	"extra": {
-		"symfony": {
-			"allow-contrib": false,
-			"require": "6.1.*"
 		}
 	},
 	"authors": [
@@ -41,8 +33,7 @@
 	],
 	"config": {
 		"allow-plugins": {
-			"symfony/flex": true,
-			"symfony/runtime": true
+			"symfony/flex": true
 		}
 	}
 }
